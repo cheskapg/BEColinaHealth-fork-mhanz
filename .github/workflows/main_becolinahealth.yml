@@ -21,14 +21,14 @@ jobs:
       - name: Create .env file
         run: |
           touch .env
-          echo FE_URL=https://chzcolinahealthwebsite.azurewebsites.net >> .env
+          echo FE_URL=https://colinahealth.azurewebsites.net >> .env
           echo JWT_SECRET=pogiko123 >> .env
           echo DB_TYPE=postgres >> .env
           echo PGHOST=colinadb.postgres.database.azure.com >> .env
           echo PGUSER=colina >> .env
           echo PGPORT=5432 >> .env
           echo PGDATABASE=colina >> .env
-          echo PGPASSWORD="jajnav5@" >> .env
+          echo PGPASSWORD=jajnav5@ >> .env
           echo DB_SYNCHRONIZE=true >> .env
           echo DB_LOGGING=true >> .env
 
