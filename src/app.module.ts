@@ -33,7 +33,8 @@ import { PrescriptionFilesModule } from './prescriptionsFiles/prescriptionsFiles
 
 import { FormsModule } from './forms/forms.module';
 import { FormFilesModule } from './formFiles/formFiles.module';
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env.local' }),
