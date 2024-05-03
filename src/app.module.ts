@@ -41,15 +41,15 @@ import { FormFilesModule } from './formFiles/formFiles.module';
     MulterModule.register({
       dest: './uploads',
     }),
- TypeOrmModule.forRoot({
+  TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'colinadb.postgres.database.azure.com',
-      port: 5432,
-      username: 'colina',
-      password: 'jajnav5@',
-      database: 'colina',
-      synchronize: true,
-      logging: true,
+      host: process.env.PGHOST,
+      port: parseInt(process.env.PGPORT, 10),
+      username: process.env.PGUSER,
+      password: process.env.PGPASSWORD,
+      database: process.env.PGDATABASE,
+      synchronize: process.env.DB_SYNCHRONIZE === 'true',
+      logging: process.env.DB_LOGGING === 'true',
       entities: [join(__dirname, '**', '*.entity.{ts,js}')],
       autoLoadEntities: true, // Automatically load entities without the need for the entities array
       ssl: true,
